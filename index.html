@@ -3,130 +3,111 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Telephones</title>
-
+   
+    <!--- vínculo al arhcivo ---->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  
+  <body bgcolor="#383535" style="padding-left: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;margin-bottom: 0px">
     <style>
-
         body {
           font-family: Arial, Helvetica, sans-serif;
-          padding-left: 10px;
+          padding-left: 30px;
         }
-
         header {
             font-size: 20px;
+            background: #080c96;
         }
-
         nav {
           float: left;
           width: 20%;
           height: 150px;
-          background: #eeeeee;
+          background: #525366;
           padding: 20px;
         }
 
         .seltext {
             font-weight: bold;
         }
-
         .auxtext {
             font-size: 14px;
             color: #807F7F;
         }
 
     </style>
-
-  </head>
-  <body>
-
-    <header>
-      <h2>Telephones by region</h2>
-    </header>
-
-    <nav style="border:1px solid #BEBDBD; border-width:2px;">
-      <p class="seltext">Region:</p>
-      <select id="region" name="region"  onchange="selectPlot()">
-
-        #<!--- Este codigo se elimina
-        <option value="Medellin">N.Amer</option>
-        <option value="Bogota">Europe</option>
-        <option value="Cali">Asia</option>
-        <option value="Barranquilla">S.Amer</option>
-
-        #<-- Genera las opciones del menu usando Jinja2 --->
-
-        
-            <option value="N.Amer">N.Amer</option>
-        
-            <option value="Europe">Europe</option>
-        
-            <option value="Asia">Asia</option>
-        
-            <option value="S.Amer">S.Amer</option>
-        
-            <option value="Oceania">Oceania</option>
-        
-            <option value="Africa">Africa</option>
-        
-            <option value="Mid.Amer">Mid.Amer</option>
-        
-
-        #<!--- Fin de la modificacion --->
-
-      </select>
-      <br>
-      <hr>
-      <p class="auxtext"> Data from AT&T (1961) The World's Telephones. </p>
-    </nav>
-
-    <div>
-
-      <div class="myImage" id="Cali"   style="display:block"> <img src="https://github.com/eescudero45/eescuderop-github/blob/master/myimage.txt"   alt="Cali">   </div>
-
-
-      
-        
-          <div class="myImage" id="N.Amer" style="display:block"> <img src="figs/N.Amer.png" alt="N.Amer"> </div>
-        
-      
-        
-          <div class="myImage" id="Europe" style="display:none"> <img src="figs/Europe.png" alt="Europe"> </div>
-        
-      
-        
-          <div class="myImage" id="Asia" style="display:none"> <img src="figs/Asia.png" alt="Asia"> </div>
-        
-      
-        
-          <div class="myImage" id="S.Amer" style="display:none"> <img src="figs/S.Amer.png" alt="S.Amer"> </div>
-        
-      
-        
-          <div class="myImage" id="Oceania" style="display:none"> <img src="figs/Oceania.png" alt="Oceania"> </div>
-        
-      
-        
-          <div class="myImage" id="Africa" style="display:none"> <img src="figs/Africa.png" alt="Africa"> </div>
-        
-      
-        
-          <div class="myImage" id="Mid.Amer" style="display:none"> <img src="figs/Mid.Amer.png" alt="Mid.Amer"> </div>
-        
-      
-
+    <div class="Header" style="display: block; width: 100%; overflow: hidden; height: 100px; background-color: #080c96 color:#fffcfc";"> 
+    <h10>Pronóstico de la evolución de casos activos de SARS-CoV-2 en Colombia, trabajo final Analitica Predictiva, Universidad Naciona de Colombia</h10>
     </div>
-
-    <script>
-      function selectPlot() {
-        var region = document.getElementById("region").value;
-        var images = document.getElementsByClassName("myImage");
-        for (var i = 0; i < images.length; i++) {
-          if (images[i].id == region) {
-            images[i].style.display = "block"
-          }else{
-            images[i].style.display = "none"
-          }
+    <header>
+        <h1 style="color:#fffcfc">Dashboard COVID-19 en Colombia</h1>
+    </header>
+    <section>
+        <p style="color:#fffcfc">Colombia no ha sido ajena a la crisis generada por la aparición del síndrome respiratorio agudo severo (COVID-19), enfermedad que ha llevado al limite a la sociedad debido a su impacto y a las medidas disruptivas, rigurosas y extremas que han tomado los gobiernos para controlar su transmisión, A continuacion se presentan los principales datos de como ha                 evolucionado el virus en Colombia. </p>
+    </section>
+    <section>
+        <style>
+        nav {
+            float: left;
+            width: 20%;
+            height: 60px;
+            background: #2e2eb3;
+            padding: 20px;
         }
-      }
-    </script>
+        </style>
+        <div>
+        <h3 style="color:#fffcfc">Métricas Situación Actual Del País</h3>
+        </div>
+
+        <div>
+        <img align=right src="https://docs.tibco.com/pub/spotfire_web_player/6.0.0-november-2013/es-ES/WebHelp/GUID-7DE3DD69-D688-4756-9BB1-C94EE448483C-display.png" width="650" height="200">
+        </div>
+        <div>
+        <img align=right src="https://docs.tibco.com/pub/spotfire_web_player/6.0.0-november-2013/es-ES/WebHelp/GUID-7DE3DD69-D688-4756-9BB1-C94EE448483C-display.png" width="650" height="200">
+        </div>
+        <div style="width: 50%">
+        <iframe scrolling="no" marginheight="0" marginwidth="0"src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="450" height="350" frameborder="0"></iframe>
+        </div>
+                <div>
+        <table border=0 width=450><tr><td align="center"> 
+        <map name="mapa1"> 
+        <area alt="Casa" shape="CIRCLE" coords="44,36,29" nohref="#fc2121"> 
+        <area alt="Muertos" shape="CIRCLE" coords="140,35,31" nohref="#fc2121"> 
+        <area alt="Recuperados" shape="circle" coords="239,37,30" nohref="#189c11"> 
+        <area alt="Hospital UCI" shape="CIRCLE" coords="336,36,31" nohref="#c9bb1e"> 
+        </map> 
+        <img src="mapa1.png" width="380" height="72" alt="Mapa de imágenes. Pulsa en cada           una de los círculos." border="0" usemap="#mapa1"> 
+        <br>  
+        </td></tr></table>
+        </div>
+        <div style="width: 100%">
+        <br>
+        </br>
+        <h2 style="font-size: 20px; background: #080c96; color: #ffffff">Evaluación Estadistica</h2>
+        <div>
+        <h4 style="font-size: 20px; background: #858181; color: #ffffff">Medidas Estadísticas</h4>
+        <p style="color:#ffffff">A partir del análisis de las cifras historicas, se puede evidenciar un nivel de variación y media entre las variables de forma general y en su evolución por ciudad</p>
+        </div>
+        <div>
+        <img src="https://1.bp.blogspot.com/_8qry_6iWbqw/SAp26irmSBI/AAAAAAAAAAk/1-K68pcNSsQ/w1200-h630-p-k-no-nu/x-r.gif">
+        </div>
+        <div>
+        <h4 style="font-size: 20px; background: #858181; color: #ffffff">Modelo de Proyección</h4>
+        <p style="color:#ffffff">El siguiente modelo muestra una proyección ajustada del COVID-19 en dos horizontes de tiempo de corto y mediano plazo</p>
+        </div>
+
+
+
+
+<footer style="color: #ffffff">
+    <br>
+    © Proyecto de Analítica Predictiva realizado en el año 2020 por Milady Aguilera Cardona,
+    Manuela Cuartas Meneses, Esteban Escudero Puerta y Andrés Felipe González Lozano.</footer>
+
+<script src="script.js"></script>
+
+    </section>  
   </body>
+</html> 
+</body>
 </html>
