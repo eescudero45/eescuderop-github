@@ -57,9 +57,106 @@
         <div>
         <h3 style="color:#fffcfc">Métricas Situación Actual Del País</h3>
         </div>
-
         <div>
-        <img src="imagenes/imagen1.png" width="650" height="200">
+        <h2>Evolución COVID-19 por ciudad</h2>
+        </div>
+        <div>
+          <nav style="border:1px solid #BEBDBD; border-width:2px;">
+          <p class="seltext">Region:</p>
+          <select id="region" name="region"  onchange="selectPlot()">
+          
+            <option value="ID">ID</option>
+            
+            <option value="fecha_notificacion">fecha_notificacion</option>
+            
+            <option value="ciudad_ubicacion">ciudad_ubicacion</option>
+            
+            <option value="departamento">departamento</option>
+            
+            <option value="atencion">atencion</option>
+            
+            <option value="edad">edad</option>
+            
+            <option value="sexo">sexo</option>
+            
+            <option value="tipo">tipo</option>
+            
+            <option value="estado">estado</option>
+            
+            <option value="fecha_recuperado">fecha_recuperado</option>
+            
+            <option value="tipo_recuperacion">tipo_recuperacion</option>
+            
+            <option value="pertenencia_etnica">pertenencia_etnica</option>
+            
+            <option value="grupo_etnico">grupo_etnico</option>
+            
+            <option value="fecha_muerte">fecha_muerte</option>
+            
+          </select>
+          </nav>
+        </div>
+        <div>
+          
+            
+              <div class="myImage" id="ID" style="display:block"> <img src="imagenes/ID.png"                      alt="ID"> </div>
+          
+          
+            
+            <div class="myImage" id="fecha_notificacion" style="display:none"> <img src="imagenes/fecha_notificacion.png"                   alt="fecha_notificacion"> </div>
+            
+          
+            
+            <div class="myImage" id="ciudad_ubicacion" style="display:none"> <img src="imagenes/ciudad_ubicacion.png"                   alt="ciudad_ubicacion"> </div>
+            
+          
+            
+            <div class="myImage" id="departamento" style="display:none"> <img src="imagenes/departamento.png"                   alt="departamento"> </div>
+            
+          
+            
+            <div class="myImage" id="atencion" style="display:none"> <img src="imagenes/atencion.png"                   alt="atencion"> </div>
+            
+          
+            
+            <div class="myImage" id="edad" style="display:none"> <img src="imagenes/edad.png"                   alt="edad"> </div>
+            
+          
+            
+            <div class="myImage" id="sexo" style="display:none"> <img src="imagenes/sexo.png"                   alt="sexo"> </div>
+            
+          
+            
+            <div class="myImage" id="tipo" style="display:none"> <img src="imagenes/tipo.png"                   alt="tipo"> </div>
+            
+          
+            
+            <div class="myImage" id="estado" style="display:none"> <img src="imagenes/estado.png"                   alt="estado"> </div>
+            
+          
+            
+            <div class="myImage" id="fecha_recuperado" style="display:none"> <img src="imagenes/fecha_recuperado.png"                   alt="fecha_recuperado"> </div>
+            
+          
+            
+            <div class="myImage" id="tipo_recuperacion" style="display:none"> <img src="imagenes/tipo_recuperacion.png"                   alt="tipo_recuperacion"> </div>
+            
+          
+            
+            <div class="myImage" id="pertenencia_etnica" style="display:none"> <img src="imagenes/pertenencia_etnica.png"                   alt="pertenencia_etnica"> </div>
+            
+          
+            
+            <div class="myImage" id="grupo_etnico" style="display:none"> <img src="imagenes/grupo_etnico.png"                   alt="grupo_etnico"> </div>
+            
+          
+            
+            <div class="myImage" id="fecha_muerte" style="display:none"> <img src="imagenes/fecha_muerte.png"                   alt="fecha_muerte"> </div>
+            
+          
+        </div>
+        <div>
+        <img align=right src="imagenes/imagen1.png" width="650" height="200">
         </div>
         <div>
         <img align=right src="https://docs.tibco.com/pub/spotfire_web_player/6.0.0-november-2013/es-ES/WebHelp/GUID-7DE3DD69-D688-4756-9BB1-C94EE448483C-display.png" width="650" height="200">
@@ -103,8 +200,19 @@
     © Proyecto de Analítica Predictiva realizado en el año 2020 por Milady Aguilera Cardona,
     Manuela Cuartas Meneses, Esteban Escudero Puerta y Andrés Felipe González Lozano.</footer>
 
-<script src="script.js"></script>
-
+    <script>
+      function selectPlot() {
+        var region = document.getElementById("region").value;
+        var images = document.getElementsByClassName("myImage");
+        for (var i = 0; i < images.length; i++) {
+          if (images[i].id == region) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+        }
+      }
+    </script>
     </section>  
   </body>
 </html> 
