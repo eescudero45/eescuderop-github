@@ -15,18 +15,14 @@
           font-family: Arial, Helvetica, sans-serif;
           padding-left: 30px;
         }
+        map {
+      height:400px;
+      width:50%;
+        }
         header {
             font-size: 20px;
             background: #080c96;
         }
-        nav {
-          float: left;
-          width: 20%;
-          height: 150px;
-          background: #525366;
-          padding: 20px;
-        }
-
         .seltext {
             font-weight: bold;
         }
@@ -59,7 +55,6 @@
         </div>
         <div>
           <nav style="border:1px solid #BEBDBD; border-width:2px; align=right">
-          <p>Evolución COVID-19 por ciudad</p>
           <p class="seltext">Ciudades:</p>
           <select id="region" name="region"  onchange="selectPlot()">
           
@@ -100,14 +95,85 @@
           
         </div>
         <div>
-        <img align=right src="imagenes/imagen1.png" width="300" height="300">
+        <img align=right src="imagenes/imagen1.png" width="450" height="450">
         </div>
         <div>
         <img align=right src="imagenes/imagen3.png" width="450" height="300">
         </div>
-        <div style="width: 50%">
-        <iframe scrolling="no" marginheight="0" marginwidth="0"src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="450" height="350" frameborder="0"></iframe>
-        </div>
+          <div id='map'></div>
+  <script>
+    function initMap(){
+      // Map options
+      var options = {
+        zoom:5.2,
+        center:{lat:5.53528,lng:-73.36778}
+      }
+      // New map
+
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+/*
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:{lat:6.230833,lng:-75.590553},
+        map: map,
+        icon:'icono.png'
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content:'<p>Medellin</p>'
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+*/
+
+  addMarker({
+    coords:{lat:6.230833,lng:-75.590553},
+    iconImage:'icono.png',
+    content: '<h2>Medellin</h2>'
+  }); // Medellin
+  addMarker({coords:{lat:3.420556,lng:-76.522224},
+    content: '<h2>Cali</h2>'
+  });  // Cali
+  addMarker({coords:{lat:4.624335,lng:-74.063644}}); // Bogotá
+  addMarker({coords:{lat:10.563889,lng:-74.796387}}); //Barranquilla
+  addMarker({coords:{lat:9.68972,lng:-75.51444}}); // Cartagena
+
+  //   Add Marker function
+    function addMarker(props){
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:props.coords,
+        map: map,
+        //icon:props.iconImage
+
+      });
+      // Check for customIcon
+      if(props.iconImage){
+        // Set icon image
+        marker.setIcon(props.iconImage);
+      }
+      // Check content
+      if(props.content){
+        var infoWindow = new google.maps.InfoWindow({
+          content:props.content
+        });
+
+        marker.addListener('click', function(){
+          infoWindow.open(map, marker);
+        });
+      }
+
+}
+}
+      </script>
+
+  <script defer
+      src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+      </script>
+        #<iframe scrolling="no" marginheight="0" marginwidth="0"src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="450" height="350" frameborder="0"></iframe>
         <div>
         <table border=0 width=450><tr><td> 
         <map name="mapa1"> 
