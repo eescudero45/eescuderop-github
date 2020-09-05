@@ -100,7 +100,8 @@
         <div>
         <img align=right src="imagenes/imagen3.png" width="450" height="300">
         </div>
-          <div id='map'></div>
+            <div id='map'></div>
+
   <script>
     function initMap(){
       // Map options
@@ -117,26 +118,17 @@
       var marker = new google.maps.Marker({
         position:{lat:6.230833,lng:-75.590553},
         map: map,
-        icon:'icono.png'
+        icon:'imagenes/icono.png'
       });
 
-      var infoWindow = new google.maps.InfoWindow({
-        content:'<p>Medellin</p>'
-      });
+      var infoWindow = new google.maps.InfoWindow({content:'<p>Medellin</p>'});
 
-      marker.addListener('click', function(){
-        infoWindow.open(map, marker);
+      marker.addListener('click', function(){infoWindow.open(map, marker);
       });
 */
 
-  addMarker({
-    coords:{lat:6.230833,lng:-75.590553},
-    iconImage:'icono.png',
-    content: '<h2>Medellin</h2>'
-  }); // Medellin
-  addMarker({coords:{lat:3.420556,lng:-76.522224},
-    content: '<h2>Cali</h2>'
-  });  // Cali
+  addMarker({coords:{lat:6.230833,lng:-75.590553}, iconImage:'imagenes/icono.png', content: '<h2>Medellin</h2>'}); // Medellin
+  addMarker({coords:{lat:3.420556,lng:-76.522224}, content: '<h2>Cali</h2>'});  // Cali
   addMarker({coords:{lat:4.624335,lng:-74.063644}}); // Bogotá
   addMarker({coords:{lat:10.563889,lng:-74.796387}}); //Barranquilla
   addMarker({coords:{lat:9.68972,lng:-75.51444}}); // Cartagena
@@ -168,22 +160,15 @@
 
 }
 }
+
       </script>
 
+
+
   <script defer
-      src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xmgSI6RTy7PSjTtQH2CRwyC7oWQky2Y&callback=initMap">
       </script>
-        #<iframe scrolling="no" marginheight="0" marginwidth="0"src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="450" height="350" frameborder="0"></iframe>
         <div>
-        <table border=0 width=450><tr><td> 
-        <map name="mapa1"> 
-        <area alt="Activos" shape="CIRCLE" coords="44,36,29" nohref="#fc2121"> 
-        <area alt="Fallecido" shape="CIRCLE" coords="140,35,31" nohref="#fc2121"> 
-        <area alt="Recuperado" shape="circle" coords="239,37,30" nohref="#189c11">
-        </map> 
-        <img src="mapa1.png" width="380" height="72" alt="Mapa de imágenes. Pulsa en cada una de los           círculos." border="0" usemap="#mapa1"> 
-        <br>  
-        </td></tr></table>
         </div>
         <div style="width: 100%">
         <br>
@@ -194,8 +179,9 @@
         <p style="color:#ffffff">A partir del análisis de las cifras historicas, se puede evidenciar un nivel de variación y media entre las variables de forma general y en su evolución por ciudad</p>
         </div>
         <div>
-        <img src="https://1.bp.blogspot.com/_8qry_6iWbqw/SAp26irmSBI/AAAAAAAAAAk/1-K68pcNSsQ/w1200-h630-p-k-no-nu/x-r.gif">
+        <img src="imagenes\estadisticas.png" width="450" height="350" >
         </div>
+      
         <div>
         <h4 style="font-size: 20px; background: #858181; color: #ffffff">Modelo de Proyección</h4>
         <p style="color:#ffffff">El siguiente modelo muestra una proyección ajustada del COVID-19 en dos horizontes de tiempo de corto y mediano plazo</p>
