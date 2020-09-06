@@ -7,7 +7,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   </head>
   
-  <body bgcolor="#ffffff" style="padding-left: 0px; margin-left: 10px; margin-right: 10px; margin-top: 0px;margin-bottom: 0px">
+  <body bgcolor="#ffffff" style="padding-left: 0px; margin-left: 60px; margin-right: 60px; margin-top: 0px;margin-bottom: 0px border:10px solid #000000">
     <style>
         body {
           font-family: Arial, Helvetica, sans-serif;
@@ -93,10 +93,10 @@
                    
         </div>
         <div>
-        <img src="imagenes/imagen1.png" width="600" height="450">
+        <p><img src="imagenes/imagen1.png" width="600" height="450" align="left">Porcentaje de personas contagiadas sobre la suma total de estas ciudades al dia de hoy</p>
         </div>
         <div>
-        <img src="imagenes/imagen3.png" width="450" height="300">
+        <p><img src="imagenes/imagen3.png" width="450" height="300" align="left">Cantidad total de persona por estado en cada ciudad del país al dia de hoy</p>
         </div>
       </section>
       <br>
@@ -112,25 +112,17 @@
         center:{lat:5.53528,lng:-73.36778}
       }
       // New map
-
       var map = new google.maps.Map(document.getElementById('map'), options);
-
 /*
       // Add marker
-      var marker = new google.maps.Marker({
-        position:{lat:6.230833,lng:-75.590553},
-        map: map,
-        icon:'imagenes/icono.png'
-      });
-
+      var marker = new google.maps.Marker({position:{lat:6.230833,lng:-75.590553}, map: map, ic
+      on:'imagenes/icono.png'});
       var infoWindow = new google.maps.InfoWindow({content:'<p>Medellin</p>'});
-
       marker.addListener('click', function(){infoWindow.open(map, marker);
       });
 */
 
-  addMarker({
-    coords:{lat:6.230833,lng:-75.590553}, iconImage:'icono.png', content: '<h2>Medellin</h2>'}); // Medellin
+  addMarker({coords:{lat:6.230833,lng:-75.590553}, iconImage:'icono.png', content: '<h2>Medellin</h2>'}); // Medellin
   addMarker({coords:{lat:3.420556,lng:-76.522224}, content: '<h2>Cali</h2>'});  // Cali
   addMarker({coords:{lat:4.624335,lng:-74.063644}}); // Bogotá
   addMarker({coords:{lat:10.563889,lng:-74.796387}}); //Barranquilla
@@ -292,11 +284,11 @@
         <br>
         <br>
         <br>
-        </section>
-        <section>
-        <img align=rigth src="imagenes\estadisticas.png" width="450" height="350">
-        </div> 
-        </section>
+              </section>
+              <section>
+              <p><img src="imagenes\estadisticas.png" width="450" height="350" align="left">Grafico con desviación y media por ciudad</p>
+              </section>
+              </div>  
         <section>
         <div>
         <br>
