@@ -105,7 +105,7 @@
       <section>
        <div>
        <div id='map'></div>
-<script>
+    <script>
     function initMap(){
       // Map options
       var options = {
@@ -121,26 +121,18 @@
       var marker = new google.maps.Marker({
         position:{lat:6.230833,lng:-75.590553},
         map: map,
-        icon:'icono.png'
+        icon:'imagenes/icono.png'
       });
 
-      var infoWindow = new google.maps.InfoWindow({
-        content:'<p>Medellin</p>'
-      });
+      var infoWindow = new google.maps.InfoWindow({content:'<p>Medellin</p>'});
 
-      marker.addListener('click', function(){
-        infoWindow.open(map, marker);
+      marker.addListener('click', function(){infoWindow.open(map, marker);
       });
 */
 
   addMarker({
-    coords:{lat:6.230833,lng:-75.590553},
-    iconImage:'icono.png',
-    content: '<h2>Medellin</h2>'
-  }); // Medellin
-  addMarker({coords:{lat:3.420556,lng:-76.522224},
-    content: '<h2>Cali</h2>'
-  });  // Cali
+    coords:{lat:6.230833,lng:-75.590553}, iconImage:'icono.png', content: '<h2>Medellin</h2>'}); // Medellin
+  addMarker({coords:{lat:3.420556,lng:-76.522224}, content: '<h2>Cali</h2>'});  // Cali
   addMarker({coords:{lat:4.624335,lng:-74.063644}}); // Bogotá
   addMarker({coords:{lat:10.563889,lng:-74.796387}}); //Barranquilla
   addMarker({coords:{lat:9.68972,lng:-75.51444}}); // Cartagena
@@ -172,15 +164,10 @@
 
 }
 }
-
       </script>
 
-
-
-  <script defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xmgSI6RTy7PSjTtQH2CRwyC7oWQky2Y&callback=initMap">
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xmgSI6RTy7PSjTtQH2CRwyC7oWQky2Y&callback=initMap">
       </script>
-
         </div>
         </section>
         <br>
