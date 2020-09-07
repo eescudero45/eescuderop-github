@@ -28,7 +28,6 @@
             font-size: 14px;
             color: #000000;
         }
-
     </style>
     <div class="Header" style="display: block; width: 100%; overflow: hidden; height: 100px; background-color: #080c96 color:#fffcfc";"> 
     <h10>Pronóstico de la evolución de casos activos de SARS-CoV-2 en Colombia, trabajo final Analitica Predictiva, Universidad Naciona de Colombia</h10>
@@ -37,160 +36,80 @@
         <h1 style="color:#fffcfc">Dashboard COVID-19 en Colombia</h1>
     </header>
     <section>
-        <p style="color:#000000">Colombia no ha sido ajena a la crisis generada por la aparición del síndrome respiratorio agudo severo (COVID-19), enfermedad que ha llevado al limite a la sociedad debido a su impacto y a las medidas disruptivas, rigurosas y extremas que han tomado los gobiernos para controlar su transmisión, A continuacion se presentan los principales datos de como ha                 evolucionado el virus en Colombia.</p>
+        <p style="color:#000000">Por su velocidad de propagación y su expansión a nivel mundial, el nuevo coronavirus se encuentra catalogado como pandemia por la Organización mundial de la salud.</p>
+        <p style="color:#000000">En Colombia ya se han establecido diferentes normas y estrategias para abordar esta epidemia, sin embargo la cantidad de muertes a causa de la enfermedad y la capacidad del sistema de salud para responder eficazmente a las necesidades de los pacientes infectados continúan preocupando a todo el país.</p>
+        <p>
+       <h4 style="font-size: 20px; background: #858181; color: #ffffff">Definición Problema de Analítica</h4>
+       <p>A través del estudio de las 5 ciudades principales de Colombia, se pretende tener una aproximación del comportamiento del virus en la actualidad, la etapa de desarrollo en la que se encuentra el virus y a su vez, realizar una estimación de los nuevos casos de contagio y muertes que se podrían presentar en el corto y mediano plazo.</p>
+       <p>El origen de los datos para el siguiente análisis contiene la información de actualizada de la evolución de casos de COVID-19 en Colombia del cual se extrae la información que contiene alrededor de 21 campos de los cuales para el análisis se hace uso de ID, Fecha Modificación, Ciudad Ubicación, Departamento, Atención (Casos activos*, Fallecidos, Recuperados), Edad, Sexo, Tipo, Fecha Muerte, Fecha Recuperado, Tipo Recuperación.</p>
+        </p>
     </section>
-      <section>
-        <style>
+      <style>
         nav {
             float: left;
             width: 20%;
             height: 60px;
             padding: 20px;
         }
-        </style>
-        <div>
-        <h3 style="color:#fffcfc">Métricas Situación Actual Del País</h3>
-        </div>
-        <div>
-          <nav style="border:1px solid #BEBDBD; border-width:2px; align=right">
-          <p class="seltext">Ciudades:</p>
-          <select id="region" name="region"  onchange="selectPlot()">
-          
-            <option value="Medellin">Medellin</option>
-          
-            <option value="Cali">Cali</option>
-          
-            <option value="Bogota">Bogota</option>
-          
-            <option value="Cartagena">Cartagena</option>
-          
-            <option value="Barranquilla">Barranquilla</option>
-          
-          </select>
-          </nav>
+      </style>
+      <div>
+      <h3 style="color:#fffcfc">Métricas Situación Actual Del País</h3>
+      </div>
+      <div>
+      <nav style="border:1px solid #BEBDBD; border-width:2px; align=right">
+        <p class="seltext">Ciudades:</p>
+        <select id="region" name="region"  onchange="selectPlot()">
+        
+          <option value="Medellin">Medellin</option>
+        
+          <option value="Cali">Cali</option>
+        
+          <option value="Bogota">Bogota</option>
+        
+          <option value="Cartagena">Cartagena</option>
+        
+          <option value="Barranquilla">Barranquilla</option>
+        
+        </select>
+       </nav>
        </div>
-        <div>
-           
+       <div>
+         
             
               <div class="myImage" id="Medellin" style="display:block"> <img align=left src="imagenes/Medellin.png" alt="Medellin" width="650" height="500"> </div>
+          
+         
             
-           
+              <div class="myImage" id="Cali" style="display:none"> <img align=left src="imagenes/Cali.png" alt="Cali"  width="650" height="500"> </div>
             
-            <div class="myImage" id="Cali" style="display:none"> <img align=left src="imagenes/Cali.png" alt="Cali"  width="650" height="500"> </div>
+         
             
-           
+              <div class="myImage" id="Bogota" style="display:none"> <img align=left src="imagenes/Bogota.png" alt="Bogota"  width="650" height="500"> </div>
             
-            <div class="myImage" id="Bogota" style="display:none"> <img align=left src="imagenes/Bogota.png" alt="Bogota"  width="650" height="500"> </div>
+         
             
-           
+              <div class="myImage" id="Cartagena" style="display:none"> <img align=left src="imagenes/Cartagena.png" alt="Cartagena"  width="650" height="500"> </div>
             
-            <div class="myImage" id="Cartagena" style="display:none"> <img align=left src="imagenes/Cartagena.png" alt="Cartagena"  width="650" height="500"> </div>
+         
             
-           
+              <div class="myImage" id="Barranquilla" style="display:none"> <img align=left src="imagenes/Barranquilla.png" alt="Barranquilla"  width="650" height="500"> </div>
             
-            <div class="myImage" id="Barranquilla" style="display:none"> <img align=left src="imagenes/Barranquilla.png" alt="Barranquilla"  width="650" height="500"> </div>
-            
-           
-           <p>        
-           <img src="imagenes/imagen1.png" width="600" height="450" align="right">
-           <p>Porcentaje de personas contagiadas sobre la suma total de estas ciudades al dia de hoy</p>
-           <img src="imagenes/imagen3.png" width="450" height="300">
-           <p>Cantidad total de persona por estado en cada ciudad del país al dia de hoy</p>
-           </p>
+         
+       <p>        
+        <img src="imagenes/imagen1.png" width="64%" height="450px" align="right">
+        <p>Porcentaje de personas contagiadas sobre la suma total de estas ciudades al dia de hoy</p>
+        <img src="imagenes/imagen3.png" width="34%" height="300px
+        ">
+        <p>Cantidad total de persona por estado en cada ciudad del país al dia de hoy</p>
+       </p>
         </div>
-      </section>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <section>
-       <div>
-       <div id='map'></div>
-    <script>
-    function initMap(){
-      // Map options
-      var options = {
-        zoom:5.2,
-        center:{lat:5.53528,lng:-73.36778}
-      }
-      // New map
-      var map = new google.maps.Map(document.getElementById('map'), options);
-/*
-      // Add marker
-      var marker = new google.maps.Marker({position:{lat:6.230833,lng:-75.590553}, map: map, ic
-      on:'imagenes/icono.png'});
-      var infoWindow = new google.maps.InfoWindow({content:'<p>Medellin</p>'});
-      marker.addListener('click', function(){infoWindow.open(map, marker);
-      });
-*/
-
-  addMarker({coords:{lat:6.230833,lng:-75.590553}, iconImage:'icono.png', content: '<h2>Medellin</h2>'}); // Medellin
-  addMarker({coords:{lat:3.420556,lng:-76.522224}, content: '<h2>Cali</h2>'});  // Cali
-  addMarker({coords:{lat:4.624335,lng:-74.063644}}); // Bogotá
-  addMarker({coords:{lat:10.563889,lng:-74.796387}}); //Barranquilla
-  addMarker({coords:{lat:9.68972,lng:-75.51444}}); // Cartagena
-
-  //   Add Marker function
-    function addMarker(props){
-      // Add marker
-      var marker = new google.maps.Marker({
-        position:props.coords,
-        map: map,
-        //icon:props.iconImage
-
-      });
-      // Check for customIcon
-      if(props.iconImage){
-        // Set icon image
-        marker.setIcon(props.iconImage);
-      }
-      // Check content
-      if(props.content){
-        var infoWindow = new google.maps.InfoWindow({
-          content:props.content
-        });
-
-        marker.addListener('click', function(){
-          infoWindow.open(map, marker);
-        });
-      }
-
-}
-}
-      </script>
-      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xmgSI6RTy7PSjTtQH2CRwyC7oWQky2Y&callback=initMap">
-      </script>
-        </div>
-        </section>
-        <br>
-        <br>
-        <br>
-        </br>
-        </br>
-        </br>
-        <section>
         <div>
-        <h2 style="font-size: 20px; background: #080c96; color: #ffffff">Evaluación Estadistica</h2>
+        <h2 style="font-size: 20px; background: #080c96; color: #ffffff">Análisis Descriptivo</h2>
         </div>
         <div>
         <h4 style="font-size: 20px; background: #858181; color: #ffffff">Medidas Estadísticas</h4>
         <p style="color:#000000">De acuerdo a la realidad del pais se realiza un análisis de las principales métricas por ciudad y se identifica un comportamiento individual para cada una de ellas, incluso el comportamiento historico de cada tipo de individuo de la muestra de datos.</p>
         </div>
-        </section>
         <section>
         <div>
         <nav style="border:1px solid #BEBDBD; border-width:2px">
@@ -230,132 +149,94 @@
           </select>
           </nav>
         <nav>
+          
             
-                
-                  <div class="myImages" id="BogotaRecuperado" style="display:block"> <img align="left" src="imagenes/BogotaRecuperado.png" alt="BogotaRecuperado" width="600" height="450"> </div>
-                
+                <div class="myImages" id="BogotaRecuperado" style="display:block"> <img align="left" src="imagenes/BogotaRecuperado.png" alt="BogotaRecuperado" width="600" height="450"> </div>
             
-                
+          
+            
                   <div class="myImages" id="BogotaFallecido" style="display:none"> <img align="left" src="imagenes/BogotaFallecido.png" alt="BogotaFallecido"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="BogotaActivos" style="display:none"> <img align="left" src="imagenes/BogotaActivos.png" alt="BogotaActivos"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="MedellinRecuperado" style="display:none"> <img align="left" src="imagenes/MedellinRecuperado.png" alt="MedellinRecuperado"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="MedellinFallecido" style="display:none"> <img align="left" src="imagenes/MedellinFallecido.png" alt="MedellinFallecido"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="MedellinActivos" style="display:none"> <img align="left" src="imagenes/MedellinActivos.png" alt="MedellinActivos"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="CaliRecuperado" style="display:none"> <img align="left" src="imagenes/CaliRecuperado.png" alt="CaliRecuperado"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="CaliFallecido" style="display:none"> <img align="left" src="imagenes/CaliFallecido.png" alt="CaliFallecido"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="CaliActivos" style="display:none"> <img align="left" src="imagenes/CaliActivos.png" alt="CaliActivos"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="CartagenaRecuperado" style="display:none"> <img align="left" src="imagenes/CartagenaRecuperado.png" alt="CartagenaRecuperado"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="CartagenaFallecido" style="display:none"> <img align="left" src="imagenes/CartagenaFallecido.png" alt="CartagenaFallecido"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="CartagenaActivos" style="display:none"> <img align="left" src="imagenes/CartagenaActivos.png" alt="CartagenaActivos"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="BarranquillaRecuperado" style="display:none"> <img align="left" src="imagenes/BarranquillaRecuperado.png" alt="BarranquillaRecuperado"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="BarranquillaFallecido" style="display:none"> <img align="left" src="imagenes/BarranquillaFallecido.png" alt="BarranquillaFallecido"  width="600" height="450"> </div>
-                
             
-                
+          
+            
                   <div class="myImages" id="BarranquillaActivos" style="display:none"> <img align="left" src="imagenes/BarranquillaActivos.png" alt="BarranquillaActivos"  width="600" height="450"> </div>
-                
             
-        </nav>        
-        <p><img src="imagenes\estadisticas.png" width="450" height="350">Grafico con desviación y media por ciudad</p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-              </section>
-              <section>
-              </section>  
-        <section>
+          
+        </nav>
         <div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br><br>
-        <br>
-        <br>
-        <br>
-        <h4 style="font-size: 20px; background: #858181; color: #ffffff">Modelo de Proyección</h4>
-        <p style="color:#000000">El siguiente modelo muestra una proyección ajustada del COVID-19 en dos horizontes de tiempo de corto y mediano plazo. Se decide utilizar el modelo SIR para predecir la cantidad de contagios en los proximos 5, 10 y 15 días, generando diferentes escenarios de prónostico modificando las tasas de infeccion, recuperacion y mortalidad.</p>
+        <p>
+        <img src="imagenes\estadisticas.png" width="49%" height="350px">        
+        <p>Grafico con desviación y media por ciudad</p>
+        <img src="imagenes\nuevosvsactivos.png" width="49%" height="350px">
+        <P>En este gráfico muestra la evolución de casos y el comportamiento de los casos activos en comparación con los casos nuevos por día.</p>
+        </p>
         </div>
-        <br>
+        <div>
+        <h4 style="font-size: 20px; background: #858181; color: #ffffff">Modelos de Proyección</h4>
+        <p style="color:#000000">Para realizar una evaluación del as cifras y poder determinar u horizonge de evaluación del virus. Con lo anterior se plantearon dos modelos SIR y ARIMA.
+
+        <h2 style="font-size: 20px; color: #ffffff">Modelo SIR
+        <p>El siguiente modelo muestra una proyección ajustada del COVID-19 en dos horizontes de tiempo de corto y mediano plazo. Se decide utilizar el modelo SIR para predecir la cantidad de contagios en los proximos 5, 10 y 15 días, generando diferentes escenarios de prónostico modificando las tasas de infeccion, recuperacion y mortalidad.</p>
+        </div>
         <p style="color:#000000">Usando la tasa promedio diaria general de infección, recuperación y fallecidos, se plantea el primer escenario del modelo SIR. Para este caso, gráficamente se evidencia que el pronóstico para casos reales presenta un crecimiento y el dato real empieza a decrecer, lo que da una primera percepción del mal ajuste</p>
-        <br>
-        </br>
-        </br>
-        </section>
-        <div>
+        <p>
         <P>A continuación se muestra la evolución de casos y el comportamiento de los casos activos en comparación con los casos nuevos por dia</p>
-        </div>
-        <div>
         <img src="imagenes\nuevosvsactivos.png" width="450" height="350">
-        </div>
+        <P>A continuación se muestra la evolución de casos y el comportamiento de los casos activos en comparación con los casos nuevos por dia</p>
+        </p>
         <div><p>A partir de una análisis historico de los datos se extraen las siguientes tasas las cuales harán parte del modelo</p>
         <img src="imagenes\TasasSIR.png" width="450" height="350">
         </div>
         <div><p>Usando la tasa promedio diaria general de infección, recuperación y fallecidos, se plantea el primer escenario del modelo SIR. Para este caso, gráficamente se evidencia que el pronóstico para casos reales presenta un crecimiento y el dato real empieza a decrecer, lo que da una primera percepción del mal ajuste</p>
         <img src="imagenes\ModeloSIR.png" width="450" height="350">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
 <footer style="color: #000000">
