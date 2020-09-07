@@ -236,17 +236,19 @@
         <div><p>Usando la tasa promedio diaria general de infección, recuperación y fallecidos, se plantea el primer escenario del modelo SIR. Para este caso, gráficamente se evidencia que el pronóstico para casos reales presenta un crecimiento y el dato real empieza a decrecer, lo que da una primera percepción del mal ajuste.</p>
         <img src="imagenes\ModeloSIR.png" width="600" height="450">
         <br>
+        <p>Debido al mal ajuste del escenario 1 se hace un segundo escenario donde se decide usar un promedio de la media de tasas diarias de los 3 primeros meses en los que aparece el virus, donde ya se encontraba instaurada la cuarentana;Sin embargo medidas como el pico y cedula de tres digitos y no tener toque de queda los fines de semana, la hacian menos restrictiva.</p>
+        <img src="imagenes\ModeloSIR2.png" width="600" height="450">
+        <p>Apesar de que en este se puede visualizar un mejor ajuste, aún queda muy por fuera de ser un modelo confiable de proyección</p>
+        <br>
         <h2 style="font-size: 20px; color: #000000">Modelo ARIMA</h2>
         <p>En el siguiente estudio se pretende realizar una aproximación del comportamiento del virus a corto plazo con el modelo ARIMA ya que se puede pronosticar una serie de tiempo utilizando los valores pasados ​​de la serie para pronosticar su futuro. Este análisis se hace en 5 ciudades principales de Colombia. Medellín, Cali, Bogotá D.C., Cartagena de Indias y Barranquilla.</p>
         </div>
-        <nav>
-            <p>Para visualizar el detalle del código y modelo ARIMA puede visualizarlo aquí :</p> <a href="https://colab.research.google.com/drive/1Pz5fmVD8MerLGorXaYzsChL4AWSse-hb#scrollTo=sntM544PwxDf">Modelo ARIMA</a>
-        </nav>
+        <p>Para visualizar el detalle del código y modelo ARIMA puede visualizarlo aquí :</p> <a href="https://colab.research.google.com/drive/1Pz5fmVD8MerLGorXaYzsChL4AWSse-hb#scrollTo=sntM544PwxDf">Modelo ARIMA</a>
         <p style="color:#000000">El primer paso para construir un modelo ARIMA es hacer estacionaria la serie de tiempo. El término Auto regresivo en ARIMA significa que es un modelo de regresión lineal que utiliza sus propios retrasos como predictores.</p>
         <br>
         <div><p>A partir de una análisis historico de los datos se extraen los siguientes análisis de información
         </p>
-        <img src="imagenes\GrafosArima.png" width="0%" height="600px">
+        <img src="imagenes\GrafosArima.png" width="90%" height="600px">
         </div>
         <div><p>Para la predicción de nuevos contagios se toma una relación del 85% de datos para entrenamiento y el restante para realizar el testeo del modelo. De acuerdo con lo anterior se establece en el siguiente cuadro el valor de la proyección de infectados para una linea de tiempo.</p>
         <img src="imagenes\ModeloArima.png" width="600" height="450">
