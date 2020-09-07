@@ -31,11 +31,11 @@
     </style>
     <div class="Header" style="display: block; width: 100%; overflow: hidden; height: 100px; background-color: #080c96 color:#fffcfc";"> 
     <h10>Pronóstico de la evolución de casos activos de SARS-CoV-2 en Colombia, trabajo final Analitica Predictiva, Universidad Naciona de Colombia</h10>
-    <h10>Trabajo Elaborado por:</h10>
-    <h10>Milady Aguilera Cardona</h10>
-    <h10>Manuela Cuartas Meneses</h10>
-    <h10>Esteban Escudero Puerta</h10>
-    <h10>Andres Felipe Gonzalez Lozano</h10>
+    <p>Trabajo Elaborado por:</p>
+    <p>Milady Aguilera Cardona</p>
+    <p>Manuela Cuartas Meneses</p>
+    <p>Esteban Escudero Puerta</p>
+    <p>Andres Felipe Gonzalez Lozano</p>
     </div>
     <header>
         <h1 style="color:#fffcfc">Dashboard COVID-19 en Colombia</h1>
@@ -230,15 +230,31 @@
         <p>El siguiente modelo muestra una proyección ajustada del COVID-19 en dos horizontes de tiempo de corto y mediano plazo. Se decide utilizar el modelo SIR para predecir la cantidad de contagios en los proximos 5, 10 y 15 días, generando diferentes escenarios de prónostico modificando las tasas de infeccion, recuperacion y mortalidad.</p>
         </div>
         <p style="color:#000000">Usando la tasa promedio diaria general de infección, recuperación y fallecidos, se plantea el primer escenario del modelo SIR. Para este caso, gráficamente se evidencia que el pronóstico para casos reales presenta un crecimiento y el dato real empieza a decrecer, lo que da una primera percepción del mal ajuste</p>
+        <nav>
+            <p>Para más inforación consulte el detalle del códio y modelo SIR en:</p> <a href="https://colab.research.google.com/drive/1_EKVXAkGfG_GYYCT8Nf_j1YgFInuRVs4#scrollTo=CQBgQVsbG9xy">Modelo SIR</a>
+        </nav>
         <div><p>A partir de una análisis historico de los datos se extraen las siguientes tasas las cuales harán parte del modelo</p>
         <img src="imagenes\TasasSIR.png" width="450" height="350">
         </div>
-        <div><p>Usando la tasa promedio diaria general de infección, recuperación y fallecidos, se plantea el primer escenario del modelo SIR. Para este caso, gráficamente se evidencia que el pronóstico para casos reales presenta un crecimiento y el dato real empieza a decrecer, lo que da una primera percepción del mal ajuste</p>
-        <img src="imagenes\ModeloSIR.png" width="450" height="350">
+        <div><p>Usando la tasa promedio diaria general de infección, recuperación y fallecidos, se plantea el primer escenario del modelo SIR. Para este caso, gráficamente se evidencia que el pronóstico para casos reales presenta un crecimiento y el dato real empieza a decrecer, lo que da una primera percepción del mal ajuste.</p>
+        <img src="imagenes\ModeloSIR.png" width="600" height="450">
         <br>
-        <br>
+        <h2 style="font-size: 20px; color: #000000">Modelo ARIMA</h2>
+        <p>En el siguiente estudio se pretende realizar una aproximación del comportamiento del virus a corto plazo con el modelo ARIMA ya que se puede pronosticar una serie de tiempo utilizando los valores pasados ​​de la serie para pronosticar su futuro. Este análisis se hace en 5 ciudades principales de Colombia. Medellín, Cali, Bogotá D.C., Cartagena de Indias y Barranquilla.</p>
+        </div>
+        <p style="color:#000000">El primer paso para construir un modelo ARIMA es hacer estacionaria la serie de tiempo. El término Auto regresivo en ARIMA significa que es un modelo de regresión lineal que utiliza sus propios retrasos como predictores.</p>
+        <nav>
+            <p>Para más información consulte el detalle del código y modelo ARIMA en:</p> <a href="https://colab.research.google.com/drive/1Pz5fmVD8MerLGorXaYzsChL4AWSse-hb#scrollTo=sntM544PwxDf">Modelo ARIMA</a>
+        </nav>
+        <div><p>A partir de una análisis historico de los datos se extraen los siguientes análisis e los datos</p>
+        <img src="imagenes\GrafosArima.png" width="90" height="700px">
+        </div>
+        <div><p>Para la predicción de nuevos contagios se toma una relación del 85% de datos para entrenamiento y el restante para realizar el testeo del modelo. De acuerdo con lo anterior se establece en el siguiente cuadro el valor de la proyección de infectados para una linea de tiempo.</p>
+        <img src="imagenes\ModeloArima.png" width="600" height="450">
 <footer style="color: #000000">
     <br>
+    <br>
+    
     © Proyecto de Analítica Predictiva realizado en el año 2020 por Milady Aguilera Cardona,
     Manuela Cuartas Meneses, Esteban Escudero Puerta y Andrés Felipe González Lozano.</footer>
 
